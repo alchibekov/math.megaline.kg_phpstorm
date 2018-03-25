@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user_session']))
+{
+    header("Location: index.php");
+}
+
+/*include_once 'header.php';*/
+include_once 'dbconfig.php';
+
+$stmt = $db_con->prepare("SELECT * FROM members WHERE user_id=:uid");
+$stmt->execute(array(":uid"=>$_SESSION['user_session']));
+$row=$stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

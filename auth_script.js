@@ -6,7 +6,7 @@ URL: http://www.codingcage.com/
 $('document').ready(function()
 { 
      /* validation */
-	 $("#small-dialog").validate({
+	 $("#login-form").validate({
       rules:
 	  {
 			password: {
@@ -31,7 +31,7 @@ $('document').ready(function()
 	   /* login submit */
 	   function submitForm()
 	   {		
-			var data = $("#small-dialog").serialize();
+			var data = $("#login-form").serialize();
 				
 			$.ajax({
 				
@@ -48,7 +48,7 @@ $('document').ready(function()
 					if(response=="ok"){
 									
 						$("#btn-login").html('<img src="btn-ajax-loader.gif" /> &nbsp; Signing In ...');
-						setTimeout(' window.location.href = "home.php"; ',4000);
+						setTimeout(' window.location.href = "dashboard.php"; ',4000);
 					}
 					else{
 									

@@ -1,11 +1,24 @@
 <!--Landing Page-->
 
 <!-- add header -->
-<?php require_once 'header.php';?>
+<?php
+/*require_once 'header.php';*/
+session_start();
 
+if(isset($_SESSION['user_session'])!="")
+{
+header("Location: dashboard.php");
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
+    <!--jquery registration-->
+    <script type="text/javascript" src="reg_script.js"></script>
+    <script type="text/javascript" src="auth_script.js"></script>
+    <!--jquery registration-->
+
 <!-- //add header -->
 <title>Сайт для подготовки к ОРТ | Домашняя страница</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,11 +39,6 @@
 
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!-- //font -->
-
-    <!--jquery registration-->
-    <script type="text/javascript" src="reg_script.js"></script>
-    <script type="text/javascript" src="auth_script.js"></script>
-    <!--jquery registration-->
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
@@ -510,7 +518,7 @@
     <div class="pop-up">
         <div id="small-dialog" class="mfp-hide book-form">
             <h3>Sign In </h3>
-            <form action="login.php" method="post">
+            <form method="post" id="login-form">
                 <input type="text" name="user" class="email" placeholder="Email" required="" />
                 <input type="password" name="pass" class="password" placeholder="Password" required=""/>
                 <ul>
@@ -521,9 +529,13 @@
                 </ul>
                 <a href="#">Forgot Password?</a><br>
                 <div class="clearfix"></div>
-                <input type="submit" value="Sign In">
+                <button type="submit"  class="btn btn-default" name="btn-login" id="btn-login">
+                    <span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+                </button>
             </form>
-
+            <div id="error">
+                <!-- error will be shown here ! -->
+            </div>
         </div>
     </div>
     <div class="pop-up">
