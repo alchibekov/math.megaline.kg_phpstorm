@@ -2,22 +2,22 @@
 
 <!-- add header -->
 <?php
-/*require_once 'header.php';*/
-session_start();
+//require_once 'header.php';
+/*session_start();
 
 if(isset($_SESSION['user_session'])!="")
 {
 header("Location: dashboard.php");
 }
 
-?>
+*/?>
 <!DOCTYPE html>
 <html>
 <head>
     <!--jquery registration-->
-    <script type="text/javascript" src="reg_script.js"></script>
-    <script type="text/javascript" src="auth_script.js"></script>
-    <!--jquery registration-->
+    <!--<script type="text/javascript" src="reg_script.js"></script>
+    <script type="text/javascript" src="auth_script.js"></script>-->
+    <!--jquery registration
 
 <!-- //add header -->
 <title>Сайт для подготовки к ОРТ | Домашняя страница</title>
@@ -40,7 +40,7 @@ header("Location: dashboard.php");
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!-- //font -->
 
-<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 
 	<!-- Popup-Box-JavaScript -->
@@ -52,8 +52,6 @@ header("Location: dashboard.php");
 		});
 	</script>
 	<!-- //Popup-Box-JavaScript -->
-
-
 	<!-- start-smooth-scrolling -->
 			<script type="text/javascript" src="js/move-top.js"></script>
 			<script type="text/javascript" src="js/easing.js"></script>
@@ -66,17 +64,17 @@ header("Location: dashboard.php");
 			});
 			</script>
 	<!-- //start-smoth-scrolling -->
-
-
 		<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
+			/*
 				var defaults = {
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
 				easingType: 'linear'
 				};
+			*/
 
 			$().UItoTop({ easingType: 'easeOutQuart' });
 
