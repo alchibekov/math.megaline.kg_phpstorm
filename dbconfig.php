@@ -3,8 +3,8 @@
 
 	$db_host = "localhost";
 	$db_name = "math.megaline.kg";
-	$db_user = "admin";
-	$db_pass = "admin";
+	$db_user = "platinum";
+	$db_pass = "Arozaupalanalapuazora171016";
 	
 	try{
 		

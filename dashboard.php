@@ -57,7 +57,9 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
-<div id="header"><h1>Байки из склепа</h1></div>
+ <p><a href="dashboard\index.html">dashboard_dark_colored</a></p>
+ <p><a href="dashboard\dashboard_smooth\app\index.html">dashboard_smooth</a></p>
+<!-- <div id="header"><h1>Байки из склепа</h1></div>
 <div id="sidebar">
     <p><a href="b_all.html">Все байки</a></p>
     <p><a href="b_author.html">Байки по автору</a></p>
@@ -80,6 +82,6 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
         — Ну, как же... Тут кровь..., перья птицы мёртвой..., знаки какие-то страшные нарисованы...,
         а у вас всё же дети маленькие, они испугаться могут...</p>
 </div>
-<div id="footer">&copy; Влад Мержевич</div>
+<div id="footer">&copy; Влад Мержевич</div> -->
 </body>
 </html>

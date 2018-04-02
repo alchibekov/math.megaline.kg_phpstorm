@@ -1,4 +1,4 @@
-<?php // Example 26-7: login.php
+<?php // Example 26-7: singin.php
   /*require_once 'header.php';
   echo "<div class='main'><h3>Please enter your details to log in</h3>";*/
   $error = $user = $pass = "";
@@ -27,7 +27,7 @@ _END;
         $error = "Not all fields were entered<br>";
     else
     {
-      $result = queryMySQL("SELECT user,pass FROM login.php
+      $result = queryMySQL("SELECT user,pass FROM singin.php
         WHERE user='$user' AND pass='$pass'");
 
       if ($result->num_rows == 0)
@@ -46,7 +46,7 @@ _END;
   }
 
   echo <<<_END
-    <form method='post' action='login.php'>$error
+    <form method='post' action='singin.php'>$error
     <span class='fieldname'>Username</span><input type='text'
       maxlength='16' name='user' value='$user'><br>
     <span class='fieldname'>Password</span><input type='password'

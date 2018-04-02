@@ -3,26 +3,25 @@
 <!-- add header -->
 <?php
 //require_once 'header.php';
-/*session_start();
-
+session_start();
 if(isset($_SESSION['user_session'])!="")
 {
-header("Location: dashboard.php");
+header("Location:dashboard/index.html");
 }
+?>
 
-*/?>
 <!DOCTYPE html>
 <html>
 <head>
     <!--jquery registration-->
-    <!--<script type="text/javascript" src="reg_script.js"></script>
-    <script type="text/javascript" src="auth_script.js"></script>-->
+
+
     <!--jquery registration
 
 <!-- //add header -->
 <title>Сайт для подготовки к ОРТ | Домашняя страница</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="keywords" content="ОРТ орт подготовка бишкек математика подготовка к ОРТ по математике бишкек" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -41,6 +40,7 @@ header("Location: dashboard.php");
 <!-- //font -->
 
 <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="validation.min.js"></script>
 <script src="js/bootstrap.js"></script>
 
 	<!-- Popup-Box-JavaScript -->
@@ -51,7 +51,7 @@ header("Location: dashboard.php");
 			$('.gallery-grids a').Chocolat();
 		});
 	</script>
-	<!-- //Popup-Box-JavaScript -->
+	<!-- //Popup-Box-JavaScript
 	<!-- start-smooth-scrolling -->
 			<script type="text/javascript" src="js/move-top.js"></script>
 			<script type="text/javascript" src="js/easing.js"></script>
@@ -63,18 +63,18 @@ header("Location: dashboard.php");
 				});
 			});
 			</script>
-	<!-- //start-smoth-scrolling -->
+	<!-- //start-smooth-scrolling -->
 		<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			/*
+/*
 				var defaults = {
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
 				easingType: 'linear'
 				};
-			*/
+*/
 
 			$().UItoTop({ easingType: 'easeOutQuart' });
 
@@ -98,9 +98,40 @@ header("Location: dashboard.php");
 
 						});
     </script>
-
+    <!--Preloader-->
+    <script type="text/javascript">
+    $(window).load(function() {
+    setTimeout(function () {
+    $(".loader").delay(10).fadeOut().remove();
+    }, 1000);
+    });
+    /*$(window).load(function() {
+        $(".loader").delay(1000).fadeOut().remove();
+    });*/
+    </script>
+    <!--/Preloader-->
 </head>
 <body>
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+    
 	<div class="header">
 		<div class="container">
 			<div class="w3l_header_left">
@@ -510,41 +541,77 @@ header("Location: dashboard.php");
 		</div>
 	</div>
 	<div class="footer-w3l">
-		<p> &copy;2018 | разработал Тимур Альчибековы</p>
+		<p> &copy;2018 Разработали Тимур и Гульэра Альчибековы</p>
 	</div>
 
-    <div class="pop-up">
+    <script type="text/javascript" src="auth_script.js"></script>
+
+    <div class="fg">
         <div id="small-dialog" class="mfp-hide book-form">
-            <h3>Sign In </h3>
-            <form method="post" id="login-form">
-                <input type="text" name="user" class="email" placeholder="Email" required="" />
-                <input type="password" name="pass" class="password" placeholder="Password" required=""/>
+
+            <form class="form-signin" method="post" id="login-form">
+                <h3>Войти</h3>
+                <div id="error">
+
+                </div>
+                <input type="text" id="user" name="user" class="email" placeholder="Email" required="" />
+                <input type="password" id="pass" name="pass" class="password" placeholder="Пароль" required=""/>
                 <ul>
-                    <li>
+                    <!--<<li>
                         <input type="checkbox" id="brand1" value="">
-                        <label for="brand1"><span></span>Remember me</label>
-                    </li>
+                        label for="brand1"><span></span>Remember me</label>
+                    </li>-->
                 </ul>
-                <a href="#">Forgot Password?</a><br>
+                <a href="#">Забыли пароль?</a><br>
                 <div class="clearfix"></div>
-                <button type="submit"  class="btn btn-default" name="btn-login" id="btn-login">
+
+
+
+                <button>
                     <span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
                 </button>
+                <input type="submit"  class="btn btn-default" name="btn-login" id="btn-login" value="Войти">
+                <!--<input type="image" class="btn btn-default" name="btn-login" id="btn-login" value="Sign In" src="btn-ajax-loader.gif"-->
+                <!--<img src="btn-ajax-loader.gif" width="1%"/>-->
+
             </form>
-            <div id="error">
-                <!-- error will be shown here ! -->
-            </div>
+           <!-- <form class="form-signin" method="post" id="login-form">
+
+                <h2 class="form-signin-heading">Log In to WebApp.</h2><hr />
+
+                <div id="error">
+
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email address" name="user" id="user_email" />
+                    <span id="check-e"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="pass" id="password" />
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success" name="btn-login" id="btn-login">
+                        <span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+                    </button>
+                </div>
+
+            </form>-->
         </div>
     </div>
     <div class="pop-up">
         <div id="small-dialog2" class="mfp-hide book-form">
-            <h3>Sign Up</h3>
-            <form action="#" method="post">
-                <input type="text" name="Name" placeholder="Your Name" required=""/>
-                <input type="text" name="Email" class="email" placeholder="Email" required=""/>
-                <input type="password" name="Password" class="password" placeholder="Password" required=""/>
-                <input type="password" name="Password" class="password" placeholder="Confirm Password" required=""/>
-                <input type="submit" value="Sign Up">
+            <form class="form-signin" method="post" id="register-form">
+                <h3>Зарегистрироваться</h3>
+                <input type="text" name="Name" placeholder="Имя*" required=""/>
+                <input type="text" name="Email" class="email" placeholder="Email*" required=""/>
+                <input type="password" name="Password" class="password" placeholder="Пароль*" required=""/>
+                <input type="password" name="Password" class="password" placeholder="Подтвердить пароль*" required=""/>
+                <input type="submit" value="Зарегистрироваться">
             </form>
         </div>
     </div>

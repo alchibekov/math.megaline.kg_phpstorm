@@ -20,12 +20,12 @@ $('document').ready(function()
        messages:
 	   {
             password:{
-                      required: "please enter your password"
+                      required: "Введите пароль"
                      },
-            user_email: "please enter your email address",
+            user_email: "Введите Email",
        },
 	   submitHandler: submitForm	
-       });  
+       }); 
 	   /* /validation */
 	   
 	   /* login submit */
@@ -36,7 +36,7 @@ $('document').ready(function()
 			$.ajax({
 				
 			type : 'POST',
-			url  : 'login.php',
+			url  : 'singin.php',
 			data : data,
 			beforeSend: function()
 			{	
@@ -47,8 +47,17 @@ $('document').ready(function()
 			   {						
 					if(response=="ok"){
 									
-						$("#btn-login").html('<img src="btn-ajax-loader.gif" /> &nbsp; Signing In ...');
-						setTimeout(' window.location.href = "dashboard.php"; ',4000);
+						//$("#btn-login").html('<img src="btn-ajax-loader.gif" width="1%"/>');
+                        <!--Preloader-->
+                            $("#form-signin").load(function() {
+                                setTimeout(function () {
+                                    $(".loader").delay(10).fadeOut().remove();
+                                }, 100);
+                            });
+                        /*$(window).load(function() {
+                         $(".loader").delay(1000).fadeOut().remove();
+                         });*/
+						setTimeout(' window.location.href = "dashboard/index.html"; ',4000);
 					}
 					else{
 									

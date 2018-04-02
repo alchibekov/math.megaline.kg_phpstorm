@@ -45,7 +45,7 @@ a.play-icon.popup-with-zoom-anim img:hover {
  */
 
 /* start state */
-.my-mfp-zoom-in #small-dialog {
+.my-mfp-zoom-in #small-dialog,#small-dialog2{
 opacity: 0;
 -webkit-transition: all 0.2s ease-in-out;
 -moz-transition: all 0.2s ease-in-out;
@@ -67,14 +67,31 @@ opacity: 1;
 transform: scale(1);
 padding:50px;
 }
+.my-mfp-zoom-in.mfp-ready #small-dialog2 {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+	padding:50px;
+}
 /* animate out */
 .my-mfp-zoom-in.mfp-removing #small-dialog {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
+	 -webkit-transform: scale(0.8);
+	 -moz-transform: scale(0.8);
+	 -ms-transform: scale(0.8);
+	 -o-transform: scale(0.8);
+	 transform: scale(0.8);
+	 opacity: 0;
+ }
+.my-mfp-zoom-in.mfp-removing #small-dialog2 {
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0;
 }
 /* Dark overlay, start state */
 .my-mfp-zoom-in.mfp-bg {
@@ -259,7 +276,7 @@ button::-moz-focus-inner {
 .login input[type="text"],.login input[type="password"]{
 	width:90%;
 	padding:5px;
-	margin:3px 0;x
+	margin:3px 0;
 	border: 1px solid #a63d56;
 	outline: none !important;
 }

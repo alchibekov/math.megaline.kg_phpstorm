@@ -49,7 +49,7 @@ $('document').ready(function()
 				$.ajax({
 				
 				type : 'POST',
-				url  : 'register.php',
+				url  : 'singup.php',
 				data : data,
 				beforeSend: function()
 				{	

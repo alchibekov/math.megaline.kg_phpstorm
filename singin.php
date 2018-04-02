@@ -1,4 +1,4 @@
-<?php // Example 26-7: login.php
+<?php // Example 26-7: singin.php
 //echo "<div class='main'><h3>Please enter your details to log in</h3>";
 session_start();
 require_once 'dbconfig.php';
@@ -47,10 +47,10 @@ if(isset($_POST['btn-login']))
 
         $stmt = $db_con->prepare("SELECT * FROM members WHERE user=:email");
         $stmt->execute(array(":email"=>$user_email));
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $row = $stmt->fetch(PDO::FETCH_BOTH);
         $count = $stmt->rowCount();
 
-        if($row['user_password']==$password){
+        if($row['pass']==$password){
 
             echo "ok"; // log in
             $_SESSION['user_session'] = $row['user_id'];
